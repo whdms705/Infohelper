@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mvc1.news.NewsMapper">
+
+
+
+	<insert id="newsInsert" useGeneratedKeys="true" keyProperty="id">
+		INSERT news(news_title,member_id,news_url,news_date,news_description)
+		VALUES(#{news_title},#{member_id},#{news_url},#{news_date},#{news_description})
+	</insert>
+
+	<delete id="newsDelete">
+		DELETE FROM news
+		WHERE news_id = #{news_id}
+	</delete>
+
+
+
+
+</mapper>

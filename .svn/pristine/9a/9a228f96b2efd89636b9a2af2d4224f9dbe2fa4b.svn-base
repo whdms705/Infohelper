@@ -1,0 +1,5 @@
+package mvc1.board;
+
+public interface BoardMapper {
+
+}

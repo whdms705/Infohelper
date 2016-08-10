@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mvc1.board.BoardMapper">
+
+
+
+	<select id="noticeList" resultType="mvc1.board.NoticeDTO">
+		SELECT * FROM notice ORDER BY
+		notice_id DESC
+	</select>
+
+	<select id="noticeDetail" resultType="mvc1.board.NoticeDTO">
+		select * from notice where
+		notice_id=#{nid}
+	</select>
+
+	<select id="selectBoardCount" resultType="int">
+		SELECT count(*)
+		FROM
+		notice
+	</select>
+
+	<select id="selectForQna" parameterType="int"
+		resultType="mvc1.board.NoticeDTO">
+		SELECT notice_id,member_id,notice_title,notice_date
+		FROM notice order by notice_date desc limit #{start},#{end}
+	</select>
+	
+	<select id="selectMQna" parameterType="int"
+		resultType="mvc1.board.NoticeDTO">
+		SELECT *
+		FROM notice order by notice_date desc limit 0,#{end}
+	</select>
+
+
+
+	<insert id="qnaInsert" useGeneratedKeys="true" keyProperty="id">
+		INSERT notice (member_id,notice_title,notice_content)
+		VALUES
+		(#{member_id},#{notice_title},#{notice_content})
+	</insert>
+
+	<insert id="noticeTest" useGeneratedKeys="true" keyProperty="id">
+		INSERT notice (member_id,notice_title,notice_content,notice_file)
+		VALUES (#{member_id},#{notice_title},#{notice_content},#{notice_file})
+	</insert>
+
+	<delete id="noticeDelete">
+		DELETE FROM notice
+		WHERE notice_id = #{nid}
+	</delete>
+	
+	<update id="noticeUpdate">
+		UPDATE notice SET notice_title = #{notice_title},notice_content=#{notice_content}
+		 WHERE notice_id= #{notice_id}
+	</update>
+
+
+
+</mapper>

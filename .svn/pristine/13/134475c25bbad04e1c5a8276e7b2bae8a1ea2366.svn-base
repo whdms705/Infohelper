@@ -1,0 +1,160 @@
+package mvc1.user;
+
+import java.util.ArrayList;
+
+
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import mvc1.news.RssDTO;
+import mvc1.news.NewsService;
+import mvc1.news.NewsDTO;
+
+
+
+@Controller
+public class UserController {
+
+
+	@Autowired
+	private MemberMapper memberMapper;
+	@Autowired
+	private EmailSender emailSender;
+	@Autowired
+	private MyAuthenticationProvider myAuthenticationProvider;
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private NewsService newsService;
+
+
+	@RequestMapping("/send.do")
+	public String sendEmailAction () throws Exception {
+
+		Email email = new Email();
+
+		String reciver = "whdms705@naver.com"; //받을사람의 이메일입니다.-> naver nate 등등 
+		String subject = "이메일 제목";
+		String content = "이메일 내용입니다.";
+
+		email.setReciver(reciver);
+		email.setSubject(subject);
+		email.setContent(content);
+		emailSender.SendEmail(email);
+
+		return "main";
+	}
+/*
+	@ModelAttribute
+	public void addLoginIdToModel(Model model) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String studentNum = (principal instanceof UserDetails) ? 
+				((UserDetails)principal).getUsername() : principal.toString();
+				model.addAttribute("studentNum", studentNum);
+	}
+*/
+
+	//user PART 
+	
+	@RequestMapping(value="main.do",method=RequestMethod.GET)
+	public String main(@RequestParam("category")String category,Model model)throws Exception{
+		String query=category;
+		System.out.println("----------------------------  "+category);
+		ArrayList<RssDTO> list=newsService.getCatCodeList(query);
+		ArrayList<NewsDTO> infoList=newsService.getInfoList(list);
+		System.out.println("test >>>>>>>>>>>>>>>>>>>... "+infoList);
+		
+		model.addAttribute("infoList",infoList);
+		model.addAttribute("member",userService.getCurrentUser());
+		return "main";
+	}
+	
+	@RequestMapping(value="/signUp.do",method=RequestMethod.GET)
+	public String hello(Model model) {
+		return "signUp";
+	}
+
+	@RequestMapping(value="/signUp.do", method=RequestMethod.POST)
+	public String signUp(MemberDTO member, Model model)throws Exception{
+		memberMapper.insert(member);
+		return "redirect:/index.do";
+	}
+
+	@RequestMapping("/login.do")
+	public String login(Model model){
+		return "login";
+	}
+
+	@RequestMapping(value="/login.do", method=RequestMethod.POST)
+	public String loginPro(Model model,MemberDTO member)throws Exception{
+		Authentication authentication = 
+				myAuthenticationProvider.authenticate(member.getStudentNum(), member.getPassword());
+		if (authentication != null)
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+		return "test";
+	}
+
+	@RequestMapping(value="/index.do", method=RequestMethod.GET)
+	public String index(Model model) {
+		System.out.println("--------------------sss");
+		return "index";
+	}
+	
+	@RequestMapping(value="/myPage.do",method=RequestMethod.GET)
+	public String myPages(@RequestParam("mid")String studentNum,@RequestParam("category")String category,Model model){
+		
+		
+		String category1,category2,category3;
+		String query=category;
+		
+		
+		MemberDTO member=null;
+		category1="myNews";
+		category2="breakaway";
+		category3="update";
+		
+		if(query.equals(category1)){
+			
+		}else if(query.equals(category2)){
+			
+		}else if(query.equals(category3)){
+			member=memberMapper.selectByLoginId(studentNum);
+			model.addAttribute("member", member);
+			
+		}
+		
+			
+			return "myPage";
+			
+	}
+	
+	@RequestMapping(value="myUpdate.do",method=RequestMethod.POST)
+	public String myUpdate(@RequestParam("category")String category,MemberDTO member)throws Exception{
+		memberMapper.myUpdate(member);
+		String url="redirect:/myPage.do?mid="+member.getStudentNum()+"&category="+category;
+		return url;
+	}
+	
+	
+	@RequestMapping("memberDelete.do")
+	public String memberDelete(@RequestParam("mid")String studentNum)throws Exception{
+		memberMapper.memberDelete(studentNum);
+		String url="redirect:/index.do";
+		return url;
+	}
+
+
+}

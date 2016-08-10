@@ -1,0 +1,226 @@
+html, body {
+	height: 100%
+}
+
+#wrap {
+	margin: 0 auto -250px;
+	padding: 0 0 250px;
+	min-width: 1080px;
+	min-height: 100%
+}
+
+div {
+	display: block;
+}
+
+body {
+	margin: 0;
+	font-family: "Nanum Gothic", "Apple SD Gothic Neo", "맑은 고딕",
+		"Malgun Gothic", "AppleGothic", "돋움", Dotum, Helvetica, Arial,
+		sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+	background-color: #f3f4f7;
+	height: 100%;
+}
+
+#mainname {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+#header {
+	height: 45px;
+	margin: auto;
+}
+
+#header nav ul li a {
+	color: #FFFFFF;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 15px;
+}
+
+#header nav span {
+	color: #FFFFFF;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 15px;
+}
+
+#article {
+	border: 1px solid red;
+	min-height: 600px;
+	margin: auto;
+	width: 1170px;
+	padding-top: 20px;
+	margin-top: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+div#myname {
+	color: #FFF;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 13px;
+}
+
+#footer {
+	margin: auto;
+	border: 1px solid black;
+	height: 250px;
+	margin: 19px 0 0;
+	padding: 40px 0 0;
+	background-color: #f3f4f7;
+}
+
+#footer-inner {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1170px;
+}
+
+#footer-inner div {
+	float: left;
+}
+
+#footer-inner div.category {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-right: 20px;
+}
+
+#footer-inner div.info {
+	margin-right: 120px;
+}
+
+div.category h5 {
+	color: #A2A2A2;
+}
+
+div.category ul li a {
+	color: #CCCCCC;
+}
+
+ul.category-list li {
+	list-style-type: none;
+}
+
+div.contact a {
+	color: #CCCCCC;
+}
+
+address.address {
+	color: #A2A2A2;
+}
+
+span.copyright {
+	color: #A2A2A2;
+}
+
+.rssinfo {
+	background-color: #fff;
+	padding: 10px;
+	width: 358px;
+	height: 210px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: 1px solid #dedede;
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	border-radius:10px;
+}
+
+div.rssinfo:hover{
+	border:1px solid red;
+}
+
+h4.rssinfo_header {
+	color: #2099BB;
+	height: 25px;
+	width: 330px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+p.rssinfo_date {
+	color: #A2A2A2;
+}
+
+p.rssinfo_description {
+	height: 62px;
+	width: 326px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+input.save {
+	background-color: #a1a7ad;
+	color: #fff;
+	line-height: 1;
+	font-weight: normal;
+	padding: .2em .6em .2em;
+	font-size: 12px !important;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: .2em;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+div#title_header {
+	border: 1px solid #dedede;
+	min-height: 163px;
+	margin-bottom: 7px;
+	background-color: #fff;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+span.category {
+	background-color: #58A0DC;
+	color: #fff;
+	line-height: 1;
+	font-weight: normal;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 12px !important;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: 10px;
+	margin-right: 10px;
+	width: 10px;
+	cursor: pointer;
+}
+
+.small_text {
+	margin-bottom: 10px;
+}
+
+p.rssinfo_save {
+	text-align: right;
+}
+
+span.rssinfo_category {
+	font-weight: bold;
+	font-size: x-large;
+	font-style: normal;
+	margin-right: 30px;
+}
+
+span.rssUrl{
+	cursor:pointer;
+}

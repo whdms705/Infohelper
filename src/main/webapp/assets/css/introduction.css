@@ -1,0 +1,9 @@
+div.content-inner {
+    margin-left: 17%;
+    margin-right: -15%;
+    min-height: 550px;
+}
+
+.qna_btn{
+	text-align:right;
+}

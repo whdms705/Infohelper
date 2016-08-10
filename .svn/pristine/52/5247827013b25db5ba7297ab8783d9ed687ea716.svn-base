@@ -1,0 +1,39 @@
+package mvc1.board;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import mvc1.news.NewsDTO;
+import mvc1.user.MemberDTO;
+
+@Controller
+public class BoardController {
+	
+	@RequestMapping(value="introduction.do",method=RequestMethod.GET)
+	public String introduction(@RequestParam("category")String category,Model model)throws Exception{
+		
+		
+		String category1,category2;
+		String query=category;
+
+		
+		category1="way";
+		category2="qna";
+		
+
+		if(query.equals(category1)){
+			System.out.println("111111111111111111111111");
+			
+		}else if(query.equals(category2)){
+
+		}
+		
+		return "introduction";
+	}
+
+}

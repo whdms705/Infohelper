@@ -1,0 +1,122 @@
+.step_form {
+    border:1px solid #eaeaea;
+}
+
+.step_form {
+    width: 100%;
+    margin-top: 15px;
+}
+
+table {
+	
+    border-collapse: collapse;
+}
+
+.contents_wap {
+    margin: 0 0 0;
+    width: 721px;
+    font-family: Dotum;
+    font-size: 12px;
+    position: relative;
+    padding-top: 135px;
+}
+
+.step_form th {
+    background: #1d3150;
+    text-align: left;
+    font-weight: normal;
+    padding: 18px 20px 16px;
+    border-right: #364763 1px solid;
+}
+
+.step_form th, .step_form td {
+    word-break: break-all;
+}
+.step_title {
+    margin: 5px 0 0;
+    color: #000000;
+}
+
+th {
+    font-weight: bold;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.step_form th.current {
+    color: #ffffff;
+}
+.step_form th {
+    background: #1d3150;
+    text-align: left;
+    font-weight: normal;
+    padding: 18px 20px 16px;
+    border-right: #364763 1px solid;
+}
+
+.step_form th.step_title div.step1 {
+    background-position: 0 0;
+    width: 57px;
+}
+.step_form th.step_title div {
+    background: url(../img/fund_infor/step_num.png) no-repeat;
+    width: 59px;
+    height: 12px;
+    margin: 0 0 7px;
+}
+
+
+.step_form td {
+    padding: 15px 0;
+    border-right: #eaeaea 1px solid;
+    vertical-align: top;
+}
+
+.step_form ul {
+    color: #888888;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+user agent stylesheet
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.step_form td.current {
+    background: #f4f4f4;
+}
+.step_form td {
+    padding: 15px 0;
+    border-right: #eaeaea 1px solid;
+    vertical-align: top;
+}
+
+.step_form th, .step_form td {
+    word-break: break-all;
+}
+

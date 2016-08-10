@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mvc1.board.BoardMapper">
+
+
+
+	<select id="noticeList" resultType="mvc1.board.NoticeDTO">
+		SELECT * FROM notice ORDER BY
+		notice_id DESC
+	</select>
+
+	<select id="noticeDetail" resultType="mvc1.board.NoticeDTO">
+		select * from notice where
+		notice_id=#{nid}
+	</select>
+
+
+
+	<insert id="noticeInsert" useGeneratedKeys="true" keyProperty="id">
+		INSERT notice (member_id,notice_title,notice_content)
+		VALUES
+		(#{member_id},#{notice_title},#{notice_content})
+	</insert>
+
+	<insert id="noticeTest" useGeneratedKeys="true" keyProperty="id">
+		INSERT notice (member_id,notice_title,notice_content,notice_file)
+		VALUES (#{member_id},#{notice_title},#{notice_content},#{notice_file})
+	</insert>
+
+	<delete id="noticeDelete">
+		DELETE FROM notice
+		WHERE notice_id = #{nid}
+	</delete>
+
+
+
+</mapper>

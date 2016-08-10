@@ -1,0 +1,271 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+body, html{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+body{
+			background-image: url("../image/background2.jpg");
+			background-size: cover;
+			 filter: blur(2px);
+}
+
+a{
+	text-decoration: none;
+}
+
+/*Web*/
+@media(min-width: 768px){
+		.container{
+			padding-top: 120px;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+		.container .image{
+			position: relative;
+			background-image: url("../image/logo_new.png");
+			background-size: contain;
+			width: 79px;
+			height: 79px;
+			left:232px;
+			top:-10%;
+			margin:0;
+		}
+
+		/*wrapper*/
+		.wrapper{
+			margin:0 auto;
+			width: 543px;
+			height: 419px;
+			border-radius: 10px;
+			background: #242424;
+			opacity: 0.8;
+		}
+
+
+
+		/*濡쒓렇�씤�솕硫�*/
+		.wrapper .login{
+			margin-top: -20px;
+		}
+		.login h2{
+			margin-top: 0;
+		}
+
+		/*�쉶�썝媛��엯*/
+		.wrapper .join{
+			margin-top:5px;
+
+		}
+
+		.policy{
+			margin: 0 auto;
+			padding: 10px;
+			color: #FFF;
+			text-align: center;
+			font-style: 14px;
+		}
+
+		/*�쉶�썝媛��엯 �셿猷�*/
+		.wrapper .ok{
+
+		}
+		.wrapper .title{
+			color: #f9cc70;
+			text-align: center;
+			font-weight: bold;
+		}
+
+
+		.wrapper .subtitle{
+			text-align: center;
+			color: #FFF;
+			font-size: 13px;
+		}
+
+		.wrapper .facebook{
+			margin: 0 auto;
+			width: 289px;
+			height: 41px;
+			background-image: url("../image/facebook.png");
+			border-radius: 5px;
+			background-size: cover;
+			color: #FFF;
+			text-align: center;
+			font-size: 15px;
+			line-height: 41px;
+			margin-bottom: 10px;
+		}
+
+		.wrapper .or{
+			margin: 0 auto;
+			width: 289px;
+			height: 15px;
+			background-image: url("../image/or.png");
+			background-size: cover;
+			margin-bottom: 10px;
+
+			
+		}
+
+		.wrapper .input{
+			margin: 0 auto;
+			border-radius: 5px;
+			width: 289px;
+			height: 41px;
+			padding: 0;
+			opacity: 0.8;
+			margin-bottom: 10px;
+			background:#FFF;
+		}
+
+		.input .logo{
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			top: 3px;
+			right:  3px;
+			vertical-align: baseline;
+			background:#F00;
+		}
+		.input input{
+			padding-left: 5px;
+			border:none;
+			border:solid 1px;
+			border-color: #FFF;
+		}
+
+		.join .input input{
+			padding-left: 5px;
+			border:none;
+			border:solid 1px;
+			border-color: #FFF;
+			background-image:url("");
+		}
+
+
+		.wrapper .box{
+			float: left;
+			width: 289px;
+			height: 41px;
+			border-radius: 5px;
+			font-size: 12px;
+			line-height: 41px;
+		}
+
+		.wrapper .mailbox{
+			float: left;
+			width: 289px;
+			height: 41px;
+			border-radius: 5px;
+			font-size: 12px;
+			line-height: 41px;
+			background: #f9cc70;
+			opacity: 0.5;
+		}
+
+		.wrapper .login_btn{
+			margin: 0 auto;
+			border-radius: 5px;
+			width: 289px;
+			height: 41px;
+			line-height: 41px;
+			font-size: 15px;
+			font-style: bold;
+			text-align: center;
+			padding: 0;
+			background:#414042;
+			color: #FFF;
+			margin-bottom: 5px;
+		} 
+
+		.wrapper .ok .login_btn{
+			margin: 0 auto;
+			border-radius: 5px;
+			width: 289px;
+			height: 41px;
+			line-height: 41px;
+			font-size: 15px;
+			font-style: bold;
+			text-align: center;
+			padding: 0;
+			background:#f9cc70;
+			color: #FFF;
+			margin-bottom: 5px;
+			margin-top: 70px;
+		}
+
+		.wrapper .option{
+
+			margin: 0 auto;
+			width: 289px;
+			height: 30px;
+		}
+
+		.wrapper .option .box{
+			float: left;
+			color: #FFF;
+			width: 50%;
+			height: 30px;
+			text-align: center;
+			font-size: 13px;
+			line-height: 30px;
+		}
+
+		.wrapper .option .back{
+			margin: 0 auto;
+			color: #FFF;
+			width: 100%;
+			height: 30px;
+			text-align: center;
+			font-size: 13px;
+			line-height: 30px;
+		}
+}
+
+/*Mobile*/
+@media(max-width: 768px){
+		/*container*/
+		.container{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			background:#000000;
+		}
+
+		/*navbar*/
+		.navbar{
+			position: fixed;
+			top:0;
+			width: 100%;
+			height: 100px;
+			background: #0F0;
+			margin: 0;
+		}
+
+		.navbar .login_btn{
+			right: 0;
+			height: 100%;
+			margin: 0;
+			background:#F00;
+		}
+
+		/*login_form*/
+		.login_form{
+			display: none;
+			width: 100px;
+			height: 100px;
+			background:#FF0;
+
+		}
+}

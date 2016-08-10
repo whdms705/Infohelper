@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<%@ include file="/WEB-INF/views/header.jsp" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<title>Insert title here</title>
+</head>
+<body>
+<div id="wrap">
+<%@ include file="/WEB-INF/views/nav.jsp" %>
+<div class="container">
+			<div id="article">
+			<c:set var="it" value="IT"/>
+			<c:set var="economy" value="경제"/>
+			<c:set var="conference" value="컨퍼런스"/>
+			<c:set var="opendata" value="공공데이터"/>
+			
+			<div id="title_header">
+			<h3 class="header_text">관심 자료 보기</h3>
+			<div class="small_text"><small>관심 있는 자료를 주제별로 볼 수 있습니다.</small></div>
+			<p class="rssinfo_category_list">
+			<span class="rssinfo_category">category</span>
+		    <span class="category" onclick="location.href='main.do?category=${it}'">${it}</span>
+		    <span class="category" onclick="location.href='main.do?category=${economy}'">${economy}</span>
+		    <span class="category" onclick="">컨퍼런스</span>
+		    <span class="category" onclick="">공공데이터</span>
+		    </p>
+			</div>
+		
+		<!-- ajax롤 보낼곳 -->
+		<c:forEach var="info" items="${infoList}">
+		<div class="rssinfo">
+		<form action="newsInsert.do" method="post">
+		<h4 class="rssinfo_header"><a href="${info.news_url}">${info.news_title}</a></h4><br>
+		<input type="hidden" value="${category}" name="category"/>
+		<input type="hidden" value="${mid}" name="member_id"/>
+		<input type="hidden" value="${info.news_title}" name="news_title"/>
+	    <input type="hidden" value="${info.news_url}" name="news_url"/>
+	
+		    <p class="rssinfo_date">${info.news_date}</p>
+		      <input type="hidden" value="${info.news_date}" name="news_date"/>
+		    <p class="rssinfo_description">${info.news_description}</p>
+		      <input type="hidden" value="${info.news_description}" name="news_description"/>
+		    <p class="rssinfo_save">
+		    <input type="submit" class="save" value="clip">
+		    </p>
+		    
+		 </form>
+		</div>
+		
+			
+		</c:forEach>
+			
+			
+			
+			</div>
+		</div>
+
+
+
+
+
+</div>
+<%@ include file="/WEB-INF/views/footer.jsp" %>
+</body>
+</html>
